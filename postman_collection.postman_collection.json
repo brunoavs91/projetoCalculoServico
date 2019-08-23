@@ -1,0 +1,291 @@
+{
+	"info": {
+		"_postman_id": "b335afc2-973e-4ddc-8fe0-63f260727424",
+		"name": "postman_collection",
+		"description": "Banco inter, cruds de usuarios, para fazer o calculo primeiro cadastrar usuario",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Crud_Usuario",
+			"item": [
+				{
+					"name": "localhost:8080/usuario/salvar",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"idUsuarioDTO\":1,\n\t\"nome\":\"Teste \",\n\t\"email\":\"teste@email.com\",\n\t\"listaDigitoUnico\":null\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/usuario/salvar",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"usuario",
+								"salvar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8080/usuario/excluir/2",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "senha",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "angular",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "client",
+								"value": "angular",
+								"type": "text"
+							},
+							{
+								"key": "username",
+								"value": "admin",
+								"type": "text"
+							},
+							{
+								"key": "password",
+								"value": "admin",
+								"type": "text"
+							},
+							{
+								"key": "grant_type",
+								"value": "password",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/usuario/excluir/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"usuario",
+								"excluir",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8080/usuario/atualizar/1",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "senha",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "angular",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"idUsuarioDTO\": 1,\n    \"nome\": \"bruno \",\n    \"email\": \"teste@email.com\",\n    \"listaDigitoUnico\": null\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/usuario/atualizar/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"usuario",
+								"atualizar",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8080/usuario/listausuario",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/usuario/listausuario",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"usuario",
+								"listausuario"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8080/usuario/buscarusuario/1",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/usuario/buscarusuario/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"usuario",
+								"buscarusuario",
+								"1"
+							]
+						},
+						"description": "Buscar usuario por id"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Calculo",
+			"item": [
+				{
+					"name": "localhost:8080/digitounico/calcularesultado",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"idDigitoUnicoDTO\":1,\n\t\"numero\":345,\n\t\"digitoUnico\":null,\n\t\"multiplicador\": 4,\n\t\"resultado\": null,\n\t\"idUsuario\":null\n\t\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/digitounico/calcularesultado",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"digitounico",
+								"calcularesultado"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8080/digitounico/buscartodosdigitos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/digitounico/buscartodosdigitos",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"digitounico",
+								"buscartodosdigitos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:8080/digitounico/buscardigitousuario/1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/digitounico/buscardigitousuario/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"digitounico",
+								"buscardigitousuario",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
